@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="css/button.css">
     
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-
+    
+    <!--React.js-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+      
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -240,7 +245,7 @@
                     </p>
                   </secction>
                   <secction>
-                    <h5>使用したスキル</h5>
+                    <h5>使用したス��ル</h5>
                     <ul>
                       <li>Rub on Rails</li>
                       <li>HTML5</li>
@@ -293,7 +298,7 @@
         <div class="modal-dialog modal-dialog-scrollable modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">クレジットカード情報入力フォーム</h4>
+              <h4 class="modal-title" id="exampleModalLabel">Paycard クレジットカード情報入力フォーム</h4>
               <a href="#thirdPage" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal4')">
                 <span aria-hidden="true">&times;</span>
               </a>
@@ -308,7 +313,7 @@
                       作成ページ：フォーム画面<br>
                       <a
                         class="btn btn-primary btn-block my-1"
-                        href="http://my.internetacademy.jp/~a31908098/university_web/index.html">架空大学サイトへ</a>
+                        href="http://rkwsk1914.sakura.ne.jp/Paycard-rkwsk/">Paycardへ</a>
                     </p>
                   </secction>
                   <secction>
@@ -476,6 +481,12 @@
                   <a class="button text-decoration-none" href="#thirdPage"><span class="bg">Works</span></a>
                   <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
                 </div>
+                <div class="d-flex justify-content-center my-3">
+                  <a class="btn btn-block col-5 col-sm-3 btn-outline-light" href="https://github.com/rkwsk1914">
+                    <i class="fab fa-github"></i>
+                    &nbsp;Github
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -507,12 +518,13 @@
         	  <div class="container">
             <div class="row">
               <div class="row col-11 mx-auto wrapper d-flex justify-contnt-around">
+                <h2 class="col-12 text-center">About me</h2>
                 <div class="col-5 d-sm-block d-none">
                   <img src="imgs/Kawasaki.JPG" class="mr-5" alt="..." id="myimage">
                 </div>
                 <div class="col-12 col-sm-7">
                   <h4 class="mt-0">RYO KAWASAKI</h4>
-                  <p>
+                  <p class="m-0" style="font-size: 0.825em">
                     川﨑　亮(かわさき　りょう)<br>
                     1996年生まれ<br>
                     <br>
@@ -535,8 +547,8 @@
         	</section>
         	<section class="slide" data-anchor="slide3">
         	  <div class="container">
-            <div class="row">
-              <h2 class="col-12 text-center">Skills</h2>
+            <div class="row d-flex justify-content-center">
+              <h2 class="col-12 text-center m-0 mt-1">Skills</h2>
               <div class="col-12 col-md-10 mx-auto row d-md-flex justify-content-around wrapper d-none p-2 bg-light">
                 <div class="col-4 chart-container p-0">
                     <canvas id="Chart1" width="100" height="80"></canvas>
@@ -563,7 +575,7 @@
               <div class="col-12 d-flex justify-content-center">
                     <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
                     <a class="button skilldetail text-decoration-none" data-toggle="modal" data-target="#skilldetail">
-                      <span class="bg" style="font-size: 0.8em;">スキルの詳細</span>
+                      <span class="bg" style="font-size: 0.7em;">スキルの詳細</span>
                     </a>
                     <a class="button text-decoration-none" href="#secondPage/slide4"><span class="bg">Profile</span></a>
                 </div>
@@ -573,7 +585,7 @@
         	<section class="slide" data-anchor="slide4">
         	  <div class="container">
             <div class="row">
-              <h2 class="col-12 text-center">Profile</h2>
+              <h2 class="col-12 text-center m-0 mb-sm-3">Profile</h2>
               <div class="col-10 mx-auto wrapper">
                 <ul class="list-unstyled">
                   <li>2019年3月 中央大学経済学部 卒業</li>
@@ -584,8 +596,8 @@
                 </ul>
               </div>
               <div class="col-12 d-flex justify-content-center">
-                <a class="button text-decoration-none" href="#secondPage/slide3"><span class="bg">Skills</span></a>
-                <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
+                <a class="button text-decoration-none my-0" href="#secondPage/slide3"><span class="bg">Skills</span></a>
+                <a class="button text-decoration-none my-0" href="#secondPage/slide2"><span class="bg">About me</span></a>
               </div>
             </div>
           </div>
@@ -593,12 +605,12 @@
       	</section>
       	<section class="section p-0">
       	  <div class="container">
-            <div class="row">
-              <h2 class="col-12 text-center my-5">Work</h2>
+            <div class="row d-flex justify-content-center" >
+              <h2 class="col-12 text-center m-2 mt-5 m-sm-5">Work</h2>
               <div class="col-10 text-center mx-auto row d-flex justify-content-around wrapper">
                   <!-- Button trigger modal -->
                   <a 
-                    class="work text-decoration-none m-3" 
+                    class="work text-decoration-none m-sm-3" 
                     data-toggle="modal"
                     data-target="#workModal1"
                     style="background-image: url(imgs/work1.png);">
@@ -607,7 +619,7 @@
                   
                   <!-- Button trigger modal -->
                   <a 
-                    class="work text-decoration-none m-3" 
+                    class="work text-decoration-none m-sm-3" 
                     data-toggle="modal"
                     data-target="#workModal2"
                     style="background-image: url(imgs/work2.png);">
@@ -616,7 +628,7 @@
                   
                   <!-- Button trigger modal -->
                   <a 
-                    class="work text-decoration-none m-3" 
+                    class="work text-decoration-none m-sm-3" 
                     data-toggle="modal"
                     data-target="#workModal3"
                     style="background-image: url(imgs/work3.png);">
@@ -625,7 +637,7 @@
                   
                   <!-- Button trigger modal -->
                   <a 
-                    class="work text-decoration-none m-3" 
+                    class="work text-decoration-none m-sm-3" 
                     data-toggle="modal"
                     data-target="#workModal4"
                     style="background-image: url(imgs/work4.png);">
@@ -636,33 +648,40 @@
           </div>
       	</section>
         <section class="section p-0 text-white">
-          <div class="container">
-            <div class="row">
-              <h2 class="col-12 text-center">Contact me</h2>
-              <div class="col-8 col-sm-12 text-center mx-auto wrapper p-0">
-                  <p class="col-12 mb-4 mx-auto" id="thankmessage">
+          <div class="container" id="thelastpage">
+            <div class="row d-flex justify-content-center">
+              <h2 class="col-12 text-center mt-sm-5">Contact me</h2>
+              <div class="col-10 col-sm-12 text-center mx-auto wrapper p-0">
+                  <p class="col-12 mb-sm-4 mb-0 mx-auto" id="thankmessage">
                     最後までご覧いただきありがとうございました。<br>
                     もしこのサイトや私について何かコメントがありましたら、下記フォームをご利用ください。
                   </p>
-                  <form class="col-11 mx-auto">
-                    <div class="form-group text-left row">
-                      <label class="col-12 col-sm-2 col-form-label text-sm-right" for="name">Your name</label>
+                  <!--<form class="col-11 mx-auto">
+<div class="alert nonalert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+                    <div class="form-group text-left row mb-0 mb-sm-3">
+                      <label class="col-12 col-sm-2 col-form-label text-sm-right m-0" for="name">Your name</label>
                       <input type="text" class="form-control col-12 col-sm-10" name="name" id="name" placeholder="your name" maxlenght="30">
                     </div>
-                    <div class="form-group text-left row">
-                      <label class="col-12 col-sm-2 col-form-label text-sm-right" for="email">Email</label>
+                    <div class="form-group text-left row mb-0 mb-sm-3">
+                      <label class="col-12 col-sm-2 col-form-label text-sm-right m-0" for="email">Email</label>
                       <input type="email" class="form-control col-12 col-sm-10" name="email" id="email" placeholder="name@example.com">
                     </div>
-                    <div class="form-group text-left row">
+                    <div class="form-group text-left row mb-0 mb-sm-3">
                       <label class="col-12 col-sm-2 col-form-label-sm text-sm-right" for="message">Message</label>
                       <textarea class="form-control col-12 col-sm-10" name="message" id="message" rows="3"></textarea>
                     </div>
                     <div class="form-group row d-flex justify-content-center">
-                        <div class="cl-12 col-sm-4">
-                            <button type="submit" class="btn btn-block btn-primary" onclick="sendEmail()">送信</button>
+                        <div class="cl-12 col-sm-4 my-3">
+                            <button type="submit" class="btn btn-block btn-primary" id="sentemail">送信</button>
                         </div>
                     </div>
-                  </form>
+                  </form>-->
+                  <div id="mail"></div>
               </div>
             </div>
           </div>
@@ -691,9 +710,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
     
     <!-- Gmail Api -->
-    <script src="https://apis.google.com/js/client.js?onload=onLoadCallbackFunction"></script>
-
-    <script src="js/gmail.js"></script>
+    <!--<script src="https://apis.google.com/js/client.js?onload=onLoadCallbackFunction"></script>-->
+    
+    <!-- smtpjs -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <!--reactスクリプト。type指定忘れずに-->
+    <script type="text/babel" src="js/mail.js"></script>
+    
     <script src="js/fullPageInit.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/main.js"></script>

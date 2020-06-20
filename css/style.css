@@ -5,7 +5,7 @@ section {
 }
 
 .navbar {
-  z-index: 3;
+  z-index: 200;
   position: fixed;
   width: 100vw;
   background-color: rgba(255,255,255, 0.8);
@@ -92,4 +92,22 @@ section {
 h5 {
   padding: 0.2em;
   background-color: #81dc8d;
+}
+
+@media screen and (max-width:576px) {
+  #thelastpage {
+    position: relative;
+    top: 2rem;
+  }
+}
+
+.alert {
+  position: absolute;
+  z-index: 5;
+  top: -25%;
+  transition: all 1s ease;
+}
+
+.nonalert {
+  top: -130%;
 }

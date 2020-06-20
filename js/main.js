@@ -37,3 +37,18 @@ $('.button').on('click', (e) => {
   }
   setTimeout(action,600);
 });
+
+/*$('#sentemail').on('click', (e) => {
+  e.preventDefault();
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "gettodowithallhaste9@gmail.com",
+    Password : "B5F0EC81D6A025E3431E6ECF22885B36C033",
+    To : 'gettodowithallhaste9@gmail.com',
+    From : "fenway934ryo.homerun@icloud.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+  }).then(
+    message => console.log(message)
+  ); 
+});*/
