@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>R.kwsk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/drop.css">
+    <link rel="stylesheet" href="css/button.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+      <!-- ローディング画面 -->
+      <div id="loading">
+        <div class="drop"></div>
+        <div class="wave"></div>
+      </div>
+      
+      <!-- Modal -->
+      <div 
+        class="modal fade workModal" 
+        id="workModal1" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">大学トップページ</h4>
+              <a href="#thirdPage" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal1')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+                <div class="col-12 col-lg-5">
+                  <secction>
+                    <h5>概要</h5>
+                    <p>
+                      大学のサイト<br>
+                      作成ページ：トップページ、資料請求ページ<br>
+                      レスポンシブデザイン: 対応<br>
+                      <a
+                        class="btn btn-primary btn-block my-1"
+                        href="http://my.internetacademy.jp/~a31908098/university_web/index.html">架空大学サイトへ</a>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>設計</h5>
+                    <p>
+                      ペルソナ：画像を参照をください。<br>
+                      デザインカンプ：画像を参照をください。<br>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>苦労した点</h5>
+                    <p>
+                      初のweb制作で、レスポンシブデザイン対応のサイトを作成しました。<br>
+                      今回は受験者数の増加というコンバージョンにつながるデザインにするために<br>
+                      ペルソナやLATCH法を用いたデザインカンプの作成に力を入れました。<br>
+                      IBJのワンツーマンレッスンでメンターと何度もブラッシュアップ重ねた作品です。
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>使用したスキル</h5>
+                    <ul>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>javascript</li>
+                      <li>JQuery</li>
+                    </ul>
+                  </secction>
+                  <secction>
+                    <h5>使用したツール</h5>
+                    <ul>
+                      <li>Photoshop</li>
+                      <li>Dreamweaver</li>
+                    </ul>
+                  </secction>
+                </div>
+                <div class="col-12 col-lg-7 bg-secondary pb-5">
+                  <div id="work1">
+                    <div class="d-flex justify-content-around my-3">
+                      <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
+                        <span>{{ doc.caption }}</span>
+                        <img v-bind:src="doc.pictuer"></img>
+                      </div>
+                    </div>
+                    <div class="referense p-0">
+                      <img v-bind:src="docs[flag].pictuer">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#thirdPage" type="button" class="btn btn-secondary" onclick="closeModal('#workModal1')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div 
+        class="modal fade workModal" 
+        id="workModal2" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Saxphoneメーカーサイト</h4>
+              <a href="#thirdPage" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal2')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+              <div class="col-12 col-lg-5">
+                  <secction>
+                    <h5>概要</h5>
+                    <p>
+                      saxphoneメーカーのサイトです。<br>
+                      作成ページ：トップページ<br>
+                      レスポンシブデザイン: 非対応<br>
+                      <a
+                        class="btn btn-primary btn-block my-1"
+                        href="http://my.internetacademy.jp/~a31908098/saxophone_web/index.html">Saxphoneのページへ</a>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>設計</h5>
+                    <p>
+                      デザインカンプ<br>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>苦労した点</h5>
+                    <p>
+                      Jacascript JQueryを多用し、UXを意識ました。<br>
+                      高級感を出すと同時に、初心者にも興味をもってもらえるようなデザインにしました。<br>
+                      cssの疑似要素を使って、マウスhover時の動きを多く実装しました。<br>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>使用したスキル</h5>
+                    <ul>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>javascript</li>
+                      <li>JQuery</li>
+                    </ul>
+                  </secction>
+                  <secction>
+                    <h5>使用したツール</h5>
+                    <ul>
+                      <li>Photoshop</li>
+                      <li>Dreamweaver</li>
+                    </ul>
+                  </secction>
+                </div>
+              <div class="col-12 col-lg-7 col-12 col-lg-7 bg-secondary pb-5">
+                  <div id="work2">
+                    <div class="d-flex justify-content-around my-3">
+                      <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
+                        <span>{{ doc.caption }}</span>
+                        <img v-bind:src="doc.pictuer"></img>
+                      </div>
+                    </div>
+                    <div class="referense p-0">
+                      <img v-bind:src="docs[flag].pictuer">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#thirdPage" type="button" class="btn btn-secondary" onclick="closeModal('#workModal2')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div 
+        class="modal fade workModal" 
+        id="workModal3" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Lyrics&nbsp;歌詞の制作・投稿Webアプリ</h4>
+              <a href="#thirdPage" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal3')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+              
+                <div class="col-12 col-lg-5">
+                  <secction>
+                    <h5>概要</h5>
+                    <p>
+                      Twitterをモデルにした。歌詞の投稿Webアプリケーションです。<br>
+                      機能：<br>
+                      ・ユーザー登録・編集機能<br>
+                      ・歌詞投稿・編集・削除機能<br>
+                      ・ユーザーフォロー機能<br>
+                      ・歌詞のお気に入り登録機能<br>
+                      ・ダイレクトメッセージ機能<br>
+                      <a
+                        class="btn btn-primary btn-block my-1"
+                        href="http://lyrics-rkwsk1914.herokuapp.com/">Lyrics へ</a>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>設計</h5>
+                    <p>
+                      データベース図：画像を参照してください。<br>
+                      サイトマップ：画像を参照してください。<br>
+                      ワークフレーム: 画像を参照してください。<br>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>苦労した点</h5>
+                    <p>
+                      AWS Cloud9で、Ruby on Railsを使い制作しました。<br>
+                      HerokuとAWS S3を統合に苦心しましたが、ユーザーアカウントのプロフィール画像登録機能を実装することができました。<br>
+                      さらに、サインアップ時にリアルタイムバリデーションをVue.jsの導入に苦心しました。
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>使用したスキル</h5>
+                    <ul>
+                      <li>Rub on Rails</li>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>javascript</li>
+                      <li>JQuery</li>
+                      <li>Bootstrap</li>
+                      <li>Vue.js</li>
+                    </ul>
+                  </secction>
+                  <secction>
+                    <h5>使用したツール</h5>
+                    <ul>
+                      <li>AWS Cloud9</li>
+                      <li>AWS S3</li>
+                      <li>Heroku</li>
+                      <li>GitHub</li>
+                    </ul>
+                  </secction>
+                </div>
+                <div class="col-12 col-lg-7 bg-secondary pb-5">
+                  <div id="work3">
+                    <div class="d-flex justify-content-around my-3">
+                      <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
+                        <span>{{ doc.caption }}</span>
+                        <img v-bind:src="doc.pictuer"></img>
+                      </div>
+                    </div>
+                    <div class="referense p-0">
+                      <img v-bind:src="docs[flag].pictuer">
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="#thirdPage" type="button" class="btn btn-secondary" onclick="closeModal('#workModal3')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div 
+        class="modal fade workModal" 
+        id="workModal4" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">クレジットカード情報入力フォーム</h4>
+              <a href="#thirdPage" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal4')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+                <div class="col-12 col-lg-5">
+                  <secction>
+                    <h5>概要</h5>
+                    <p>
+                      クレジットカード情報入力フォームです。<br>
+                      フロントエンドスキルVue.jsの学習で参考サイトを見て作成しました。<br>
+                      作成ページ：フォーム画面<br>
+                      <a
+                        class="btn btn-primary btn-block my-1"
+                        href="http://my.internetacademy.jp/~a31908098/university_web/index.html">架空大学サイトへ</a>
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>苦労した点</h5>
+                    <p>
+                      Vueの基本を
+                    </p>
+                  </secction>
+                  <secction>
+                    <h5>使用したスキル</h5>
+                    <ul>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>javascript</li>
+                      <li>JQuery</li>
+                      <li>Vue.js</li>
+                    </ul>
+                  </secction>
+                  <secction>
+                    <h5>使用したツール</h5>
+                    <ul>
+                      <li>AWS Cloud9</li>
+                    </ul>
+                  </secction>
+                </div>
+                <div class="col-12 col-lg-7 bg-secondary pb-5">
+                  <div id="work4">
+                    <div class="d-flex justify-content-around my-3">
+                      <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
+                        <span>{{ doc.caption }}</span>
+                        <img v-bind:src="doc.pictuer"></img>
+                      </div>
+                    </div>
+                    <div class="referense p-0">
+                      <img v-bind:src="docs[flag].pictuer">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#thirdPage" type="button" class="btn btn-secondary" onclick="closeModal('#workModal4')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div 
+        class="modal fade" 
+        id="skilldetail" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">スキルについて</h4>
+              <a href="#secondPage/slide3" type="button" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#skilldetail')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+              
+                <div class="col-lg-4">
+                  <table class="table table-striped bg-white border">
+                      <tr>
+                        <td>5.0</td>
+                        <td>人に教えられる</td>
+                      </tr>
+                      <tr>
+                        <td>4.0</td>
+                        <td>自力で使用できる</td>
+                      </tr>
+                      <tr>
+                        <td>3.0</td>
+                        <td>調べながら自力で出来る</td>
+                      </tr>
+                      <tr>
+                        <td>2.0</td>
+                        <td>理解している</td>
+                      </tr>
+                      <tr>
+                        <td>1.0</td>
+                        <td>勉強中</td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="col-lg-8">
+                  <seiction>
+                    <h5>レーダーチャートの値について</h5>
+                    <p>私のスキルの習熟度を5段階で表しています。</p>
+                  </seiction>
+                  <seiction>
+                    <h5>Front-End/フロントエンドスキルについて</h5>
+                    <p>
+                      レスポンス対応のWeb制作、WebAPIの導入、Vue.jsやBootstrapといったフレームワークを扱うことができます。<br>
+                      また、WEBデザインも学習し、UI/UXデザインを意識したサイト構築も行えます。<br>
+                    </p>
+                  </seiction>
+                  <seiction>
+                    <h5>Back-End/バックエンドスキルについて</h5>
+                    <p>
+                      Ruby on Railsを主に扱うことができ、MySql・とのDB処理も行えます。<br>
+                      また、勤務先でVBAによる業務ツール開発経験もあり、VBAにも精通しています。<br>
+                    </p>
+                  </seiction>
+                  <seiction>
+                    <h5>DevOps/使用してきた開発ツール</h5>
+                    <p>これまでの学習で、使用してきたツールの習熟度を表しています。</p>
+                    <p>
+                      Photoshopの基本操作(アセット,WEB用画像への最適化など)は習得しています。<br>
+                      コーディングツールでは、Dreamweaver、AWS Cloud9の使用経験があり、<br>
+                      Cloud9については、AWS S3と統合し、ファイルアップロード処理も実装できます。<br>
+                      今回作成したポートフォリオサイトはHeroku、GitHub、桜サーバーを使用しています。<br>
+                    </p>
+                  </seiction>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="#secondPage/slide3" type="button" class="btn btn-secondary" onclick="closeModal('#skilldetail')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <nav class="navbar navbar-expand-sm navbar-light bg-light px-auto px-sm-5">
+            <!-- ホームへ戻るリンク。ブランドロゴなどを置く。 -->
+            <a href="#firstPage" class="navbar-brand">R.Kawasaki</a>
+            
+            <!-- 横幅が狭い時に出るハンバーガーボタン -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- メニュー項目 -->
+            <div class="collapse navbar-collapse" id="nav-bar">
+                <ul class="navbar-nav">
+                    <li data-menuanchor="firstPage" class="nav-item active"><a href="#firstPage" class="nav-link text-right">トップ</a></li>
+                    
+                    <li data-menuanchor="secondPage" class="nav-item dropdown">
+                        <a href="#secondPage" class="nav-link dropdown-toggle text-right" data-toggle="dropdown">このサイトについて</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-right text-sm-left" href="#secondPage/slide1">このサイトについて</a>
+                            <a class="dropdown-item text-right text-sm-left" href="#secondPage/slide2">自己紹介</a>
+                            <a class="dropdown-item text-right text-sm-left" href="#secondPage/slide3">スキル</a>
+                            <a class="dropdown-item text-right text-sm-left" href="#secondPage/slide4">プロフィール</a>
+                        </div>
+                    </li>
+                    <li data-menuanchor="thirdPage" class="nav-item active"><a href="#thirdPage" class="nav-link text-right">ポートフォリオ</a></li>
+                    <li data-menuanchor="fourthPage" class="nav-item active"><a href="#fourthPage" class="nav-link text-right">連絡先</a></li>
+                </ul>
+            </div>
+        </nav>
+      
+      <div id="fullpage">
+        <section class="section p-0">
+          <div class="container">
+            <div class="row">
+              <h2 class="col-11 mx-auto col-sm-12 text-center my-5">R.Kawasaki Laboratory</h2>
+              <div class="col-10 text-center mx-auto wrapper h-50">
+                <div class="d-flex justify-content-around">
+                  <a class="button text-decoration-none" href="#thirdPage"><span class="bg">Works</span></a>
+                  <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+      	</section>
+      	<section class="section p-0">
+          <section class="slide" data-anchor="slide1">
+            <div class="container">
+            <div class="row">
+              <h2 class="col-12 text-center">Aoubt this site</h2>
+              <div class="col-12 col-md-10 mx-auto wrapper">
+                <p class="col-10 text-center col-md-12 mx-auto">
+                  ここはWebエンジニアKawasakiのポートフォリオサイトです。<br>
+                  これまでに手がけた制作物、身につけたスキルをまとめています。<br>
+                  あなたに、私のことをもっと深く知ってほしいと思って作りました。<br>
+                  どうぞごゆるりとサイト内を散策してください。<br>
+                </p>
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
+                    
+                    <a class="button text-decoration-none" href="#secondPage/slide3"><span class="bg">Skills</span></a>
+                    
+                    <a class="button text-decoration-none" href="#secondPage/slide4"><span class="bg">Profile</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+        	<section class="slide" data-anchor="slide2">
+        	  <div class="container">
+            <div class="row">
+              <div class="row col-11 mx-auto wrapper d-flex justify-contnt-around">
+                <div class="col-5 d-sm-block d-none">
+                  <img src="imgs/Kawasaki.JPG" class="mr-5" alt="..." id="myimage">
+                </div>
+                <div class="col-12 col-sm-7">
+                  <h4 class="mt-0">RYO KAWASAKI</h4>
+                  <p>
+                    川﨑　亮(かわさき　りょう)<br>
+                    1996年生まれ<br>
+                    <br>
+                    2019年　中央大学経済学部卒業<br>
+                    2019年　ソフトウェア会社で車載システム開発部に技術職で就職<br>
+                    2020年　WEB制作のスキルを習得し、WEBエンジニアとしても活動<br>
+                    <br>
+                    【使用言語】<br>
+                    HTML, CSS, javascript, JQuery, Vue.js, Bootstrap,<br>
+                    Ruby, Ruby on Rails, PHP, Excel-VBA, C言語, Java<br>
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <a class="button text-decoration-none" href="#secondPage/slide4"><span class="bg">Profile</span></a>
+                <a class="button text-decoration-none" href="#secondPage/slide3"><span class="bg">Skills</span></a>
+              </div>
+            </div>
+          </div>
+        	</section>
+        	<section class="slide" data-anchor="slide3">
+        	  <div class="container">
+            <div class="row">
+              <h2 class="col-12 text-center">Skills</h2>
+              <div class="col-12 col-md-10 mx-auto row d-md-flex justify-content-around wrapper d-none p-2 bg-light">
+                <div class="col-4 chart-container p-0">
+                    <canvas id="Chart1" width="100" height="80"></canvas>
+                </div>
+                <div class="col-4 chart-container p-0">
+                    <canvas id="Chart2" width="100" height="80"></canvas>
+                </div>
+                <div class="col-4 chart-container p-0">
+                    <canvas id="Chart3" width="100" height="80"></canvas>
+                </div>
+              </div>
+              <div class="wrapper col-12 mx-auto row d-md-none d-block" id="skil">
+                <div class="col-12 d-flex justify-content-around p-0">
+                  <a class="button chartbtn text-decoration-none" v-on:click="selectCahrt('ChartAlt1')"><span class="bg">Front-end</span></a>
+                  <a class="button chartbtn text-decoration-none" v-on:click="selectCahrt('ChartAlt2')"><span class="bg">Back-end</span></a>
+                  <a class="button chartbtn text-decoration-none" v-on:click="selectCahrt('ChartAlt3')"><span class="bg">Devops</span></a>
+                </div>
+                <div class="col-8 mx-auto chart-container p-1 bg-light">
+                    <canvas id="ChartAlt1" class="" width="100" height="100"></canvas>
+                    <canvas id="ChartAlt2" class="d-none" width="100" height="100"></canvas>
+                    <canvas id="ChartAlt3" class="d-none" width="100" height="100"></canvas>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                    <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
+                    <a class="button skilldetail text-decoration-none" data-toggle="modal" data-target="#skilldetail">
+                      <span class="bg" style="font-size: 0.8em;">スキルの詳細</span>
+                    </a>
+                    <a class="button text-decoration-none" href="#secondPage/slide4"><span class="bg">Profile</span></a>
+                </div>
+            </div>
+          </div>
+        	</section>
+        	<section class="slide" data-anchor="slide4">
+        	  <div class="container">
+            <div class="row">
+              <h2 class="col-12 text-center">Profile</h2>
+              <div class="col-10 mx-auto wrapper">
+                <ul class="list-unstyled">
+                  <li>2019年3月 中央大学経済学部 卒業</li>
+                  <li>2019年4月 車載システムエンジニアとして社会人1年目</li>
+                  <li>2019年9月 インターネット・アカデミーでWEB制作のスキル(HTML, CSS, javascript, UI/UX)を学ぶ</li>
+                  <li>2019年11月 VBAとPowerShellを用いた、社内用のフォルダアクセス権管理ツールの開発プロジェクトで突如プロジェクトリーダーを担う。</li>
+                  <li>2020年3月 TechAcademyを受講 WEB制作におけるフレームワーク(Ruby on rails, Bootstrap, Vue.jsなど)を習得</li>
+                </ul>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <a class="button text-decoration-none" href="#secondPage/slide3"><span class="bg">Skills</span></a>
+                <a class="button text-decoration-none" href="#secondPage/slide2"><span class="bg">About me</span></a>
+              </div>
+            </div>
+          </div>
+        	</section>      	  
+      	</section>
+      	<section class="section p-0">
+      	  <div class="container">
+            <div class="row">
+              <h2 class="col-12 text-center my-5">Work</h2>
+              <div class="col-10 text-center mx-auto row d-flex justify-content-around wrapper">
+                  <!-- Button trigger modal -->
+                  <a 
+                    class="work text-decoration-none m-3" 
+                    data-toggle="modal"
+                    data-target="#workModal1"
+                    style="background-image: url(imgs/work1.png);">
+                    <span class="bg"></span>
+                  </a>
+                  
+                  <!-- Button trigger modal -->
+                  <a 
+                    class="work text-decoration-none m-3" 
+                    data-toggle="modal"
+                    data-target="#workModal2"
+                    style="background-image: url(imgs/work2.png);">
+                    <span class="bg"></span>
+                  </a>
+                  
+                  <!-- Button trigger modal -->
+                  <a 
+                    class="work text-decoration-none m-3" 
+                    data-toggle="modal"
+                    data-target="#workModal3"
+                    style="background-image: url(imgs/work3.png);">
+                    <span class="bg"></span>
+                  </a>
+                  
+                  <!-- Button trigger modal -->
+                  <a 
+                    class="work text-decoration-none m-3" 
+                    data-toggle="modal"
+                    data-target="#workModal4"
+                    style="background-image: url(imgs/work4.png);">
+                    <span class="bg"></span>
+                  </a>
+              </div>
+            </div>
+          </div>
+      	</section>
+        <section class="section p-0 text-white">
+          <div class="container">
+            <div class="row">
+              <h2 class="col-12 text-center">Contact me</h2>
+              <div class="col-8 col-sm-12 text-center mx-auto wrapper p-0">
+                  <p class="col-12 mb-4 mx-auto" id="thankmessage">
+                    最後までご覧いただきありがとうございました。<br>
+                    もしこのサイトや私について何かコメントがありましたら、下記フォームをご利用ください。
+                  </p>
+                  <form class="col-11 mx-auto">
+                    <div class="form-group text-left row">
+                      <label class="col-12 col-sm-2 col-form-label text-sm-right" for="name">Your name</label>
+                      <input type="text" class="form-control col-12 col-sm-10" name="name" id="name" placeholder="your name" maxlenght="30">
+                    </div>
+                    <div class="form-group text-left row">
+                      <label class="col-12 col-sm-2 col-form-label text-sm-right" for="email">Email</label>
+                      <input type="email" class="form-control col-12 col-sm-10" name="email" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group text-left row">
+                      <label class="col-12 col-sm-2 col-form-label-sm text-sm-right" for="message">Message</label>
+                      <textarea class="form-control col-12 col-sm-10" name="message" id="message" rows="3"></textarea>
+                    </div>
+                    <div class="form-group row d-flex justify-content-center">
+                        <div class="cl-12 col-sm-4">
+                            <button type="submit" class="btn btn-block btn-primary" onclick="sendEmail()">送信</button>
+                        </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+    <script src="js/vuefile.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+    <script src="js/vendors/jquery.easings.min.js"></script>
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="js/vendors/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    
+    <!-- Charts.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    
+    <!-- Gmail Api -->
+    <script src="https://apis.google.com/js/client.js?onload=onLoadCallbackFunction"></script>
+
+    <script src="js/gmail.js"></script>
+    <script src="js/fullPageInit.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
