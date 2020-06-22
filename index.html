@@ -323,9 +323,8 @@
                   <section>
                     <h5>苦労した点</h5>
                     <ul class="list-group mb-2">
-                      <li class="list-group-item"></li>
-                      <li class="list-group-item"></li>
-                      <li class="list-group-item"></li>
+                      <li class="list-group-item">Vue.jsでのイベント処理(v-on)で、複数の処理が重なるため、一つ一つ整理しながら作成しました。</li>
+                      <li class="list-group-item">自分のオリジナル機能として、カードデザインを選択出来るようにVueに追加しました。</li>
                     </ul>
                   </section>
                   <section>
@@ -361,6 +360,79 @@
             </div>
             <div class="modal-footer">
               <a href="#thirdPage" class="btn btn-secondary" onclick="closeModal('#workModal4')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div 
+        class="modal fade workModal" 
+        id="workModal5" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="ModalLabel5" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="ModalLabel5">Paycard クレジットカード情報入力フォーム</h4>
+              <a href="#thirdPage" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal5')">
+                <span aria-hidden="true">&times;</span>
+              </a>
+            </div>
+            <div class="row modal-body d-flex justify-content-start">
+                <div class="col-12 col-lg-5">
+                  <section>
+                    <h5>概要</h5>
+                    <p>
+                      クレジットカード情報入力フォームです。<br>
+                      フロントエンドスキルVue.jsの学習で参考サイトを見て作成しました。<br>
+                      作成ページ：フォーム画面<br>
+                      <a
+                        class="btn btn-primary btn-block my-1"
+                        href="http://rkwsk1914.sakura.ne.jp/Paycard-rkwsk/">Paycardへ</a>
+                    </p>
+                  </section>
+                  <section>
+                    <h5>苦労した点</h5>
+                    <ul class="list-group mb-2">
+                      <li class="list-group-item">Vue.jsでのイベント処理(v-on)で、複数の処理が重なるため、一つ一つ整理しながら作成しました。</li>
+                      <li class="list-group-item">自分のオリジナル機能として、カードデザインを選択出来るようにVueに追加しました。</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h5>使用言語</h5>
+                    <ul>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>javascript</li>
+                      <li>JQuery</li>
+                      <li>Vue.js</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h5>使用したツール</h5>
+                    <ul>
+                      <li>AWS Cloud9</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="col-12 col-lg-7 bg-secondary pb-5">
+                  <div id="work4">
+                    <div class="d-flex justify-content-around my-3">
+                      <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
+                        <span>{{ doc.caption }}</span>
+                        <img v-bind:src="doc.pictuer">
+                      </div>
+                    </div>
+                    <div class="referense p-0">
+                      <img v-bind:src="docs[flag].pictuer">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#thirdPage" class="btn btn-secondary" onclick="closeModal('#workModal5')">Close</a>
             </div>
           </div>
         </div>
@@ -635,10 +707,10 @@
         	</section>      	  
       	</section>
       	<section class="section p-0">
-      	  <div class="container">
+      	  <section class="slide" data-anchor="slide1"><div class="container">
             <div class="row d-flex justify-content-center" >
               <h2 class="col-12 text-center m-2 mt-5 m-sm-5">Work</h2>
-              <div class="col-10 text-center mx-auto row d-flex justify-content-around wrapper">
+              <div class="col-10 col-sm-12 text-center mx-auto row d-flex justify-content-around wrapper">
                   <!-- Button trigger modal -->
                   <a 
                     class="work text-decoration-none m-sm-3" 
@@ -675,8 +747,16 @@
                     <span class="bg"></span>
                   </a>
               </div>
+              <div class="d-flex justify-content-center col-12 m-3">
+                <a class="btn btn-block btn-outline-light col-3" href="#thirdPage/slide2">Next →</a>
+              </div>
             </div>
-          </div>
+          </div></section>
+      	  <section class="slide" data-anchor="slide2">
+      	    <div class="row d-flex justify-content-center" >
+      	      <h2 class="col-12 text-center m-2 mt-5 m-sm-5">Work</h2>
+      	    </div>
+      	  </section>
       	</section>
         <section class="section p-0 text-white">
           <div class="container" id="thelastpage">
