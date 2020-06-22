@@ -81,6 +81,14 @@ section {
   background-color: rgba(28,82,118, 0.8);
 }
 
+.modal section {
+  color: #333;
+}
+
+.modal h6{
+  font-weight: bold;  
+}
+
 .modal .modal-content {
   background-color: rgba(255,255,255, 0.8);
 }
@@ -94,13 +102,6 @@ h5 {
   background-color: #81dc8d;
 }
 
-@media screen and (max-width:576px) {
-  #thelastpage {
-    position: relative;
-    top: 2rem;
-  }
-}
-
 .alert {
   position: absolute;
   z-index: 5;
@@ -110,4 +111,37 @@ h5 {
 
 .nonalert {
   top: -130%;
+}
+
+list-group-flush li {
+  background-color: #2a7bb1;
+}
+
+#profile {
+ color: #fff;
+}
+
+#profile th{
+  width: 20%;
+}
+
+#profile tr:hover {
+  color: yellow;
+}
+
+
+@media screen and (max-width:576px) {
+  #thelastpage {
+    position: relative;
+    top: 2rem;
+  }
+  
+  #profile {
+   font-size: 0.8em; 
+   color: #fff;
+  }
+
+  #profile td{
+    padidng: 0.2rem;
+  }
 }

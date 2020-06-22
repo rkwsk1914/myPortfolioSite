@@ -150,6 +150,7 @@ class Sentemail extends React.Component {
     }
     else {
       const body = '【sender】' + this.state.name + '\n【mail address】' + this.state.email +  '\n【message】\n'  + this.state.message 
+      let flag = ''
       
       Email.send({
         Host : "smtp.elasticemail.com",
@@ -164,6 +165,15 @@ class Sentemail extends React.Component {
       );
       this.disAlert('#okEmail')
       console.log('Success sent Email')
+      this.setState({ 
+        name: '',
+        email: '',
+        message: '',
+        msg: '',
+      })
+      $( '#name' ).removeClass('is-valid')
+      $( '#email' ).removeClass('is-valid')
+      $( '#message' ).removeClass('is-valid')
     }
   }
   
