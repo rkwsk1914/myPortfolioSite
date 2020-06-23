@@ -67,6 +67,24 @@ const work4= new Vue ({
   }
 });
 
+const work5= new Vue ({
+  el: '#work5',
+  data: { 
+    docs: [
+      { caption: "PCトップ", pictuer: 'imgs/rkwsk/PC_top.png' },
+      { caption: "PC お問い合わせ", pictuer: 'imgs/rkwsk/PC_form.png' },
+      { caption: "スマホ トップ", pictuer: 'imgs/rkwsk/SM_top.png' },
+      { caption: "スマホ お問い合わせ", pictuer: 'imgs/rkwsk/SM_form.png' },
+    ],
+    flag: 0,
+  },
+  methods: {
+    dispPicture(index){
+      this.flag = index;
+    }
+  }
+});
+
 /*const work= new Vue ({
   el: '#work1',
   data: { 

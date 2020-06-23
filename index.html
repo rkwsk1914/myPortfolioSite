@@ -375,7 +375,7 @@
         <div class="modal-dialog modal-dialog-scrollable modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="ModalLabel5">Paycard クレジットカード情報入力フォーム</h4>
+              <h4 class="modal-title" id="ModalLabel5">RYO KWASAKI Lab ポートフォリオサイト</h4>
               <a href="#thirdPage" class="btn btn-outline-secondary border-0 text-decoration-none" onclick="closeModal('#workModal5')">
                 <span aria-hidden="true">&times;</span>
               </a>
@@ -385,9 +385,9 @@
                   <section>
                     <h5>概要</h5>
                     <p>
-                      クレジットカード情報入力フォームです。<br>
-                      フロントエンドスキルVue.jsの学習で参考サイトを見て作成しました。<br>
-                      作成ページ：フォーム画面<br>
+                      当サイトであるポートフォリオサイトです。<br>
+                      VUe.js、React.js、外部ライブラリなど自身のフロントエンドスキルをふんだんに使いました。<br>
+                      作成ページ：<br>
                       <a
                         class="btn btn-primary btn-block my-1"
                         href="http://rkwsk1914.sakura.ne.jp/Paycard-rkwsk/">Paycardへ</a>
@@ -396,8 +396,9 @@
                   <section>
                     <h5>苦労した点</h5>
                     <ul class="list-group mb-2">
-                      <li class="list-group-item">Vue.jsでのイベント処理(v-on)で、複数の処理が重なるため、一つ一つ整理しながら作成しました。</li>
-                      <li class="list-group-item">自分のオリジナル機能として、カードデザインを選択出来るようにVueに追加しました。</li>
+                      <li class="list-group-item">お問い合わせフォームで、Ractを使ってリアルタイムバリデーションを実装しました。</li>
+                      <li class="list-group-item">さらに、SmtpJSを使い自動メール送信機能を追加しています。</li>
+                      <li class="list-group-item">fullPage.jsとChart.jsは、プラグインであるため、デザインを合わせるのに苦労しました。</li>
                     </ul>
                   </section>
                   <section>
@@ -408,17 +409,20 @@
                       <li>javascript</li>
                       <li>JQuery</li>
                       <li>Vue.js</li>
+                      <li>React.js</li>
                     </ul>
                   </section>
                   <section>
-                    <h5>使用したツール</h5>
+                    <h5>使用した外部ライブラリ</h5>
                     <ul>
-                      <li>AWS Cloud9</li>
+                      <li>fullPage.js</li>
+                      <li>Chart.js</li>
+                      <li>Bootstrap</li>
                     </ul>
                   </section>
                 </div>
                 <div class="col-12 col-lg-7 bg-secondary pb-5">
-                  <div id="work4">
+                  <div id="work5">
                     <div class="d-flex justify-content-around my-3">
                       <div class="frame" v-for="(doc, index ) in docs" v-bind:key="index" v-on:click="dispPicture(index)">
                         <span>{{ doc.caption }}</span>
@@ -437,6 +441,7 @@
           </div>
         </div>
       </div>
+  
         
       <div 
         class="modal fade" 
@@ -748,13 +753,26 @@
                   </a>
               </div>
               <div class="d-flex justify-content-center col-12 m-3">
-                <a class="btn btn-block btn-outline-light col-3" href="#thirdPage/slide2">Next →</a>
+                <a class="btn btn-block btn-outline-light col-4 col-sm-2" href="#thirdPage/slide2">Next →</a>
               </div>
             </div>
           </div></section>
       	  <section class="slide" data-anchor="slide2">
       	    <div class="row d-flex justify-content-center" >
       	      <h2 class="col-12 text-center m-2 mt-5 m-sm-5">Work</h2>
+      	      <div class="col-10 col-sm-12 text-center mx-auto row d-flex justify-content-around wrapper">
+                  <!-- Button trigger modal -->
+                  <a 
+                    class="work text-decoration-none m-sm-3" 
+                    data-toggle="modal"
+                    data-target="#workModal5"
+                    style="background-image: url(imgs/work5.png);">
+                    <span class="bg"></span>
+                  </a>
+              </div>
+              <div class="d-flex justify-content-center col-12 m-3">
+                <a class="btn btn-block btn-outline-light col-4 col-sm-2" href="#thirdPage/slide1">← Previous</a>
+              </div>
       	    </div>
       	  </section>
       	</section>
